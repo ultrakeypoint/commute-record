@@ -1,3 +1,3 @@
-# Commute Record Log
+# Commute Record
 
 If you have improvements, please submit issues. 
