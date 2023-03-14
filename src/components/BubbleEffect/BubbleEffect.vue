@@ -36,17 +36,19 @@
 <style scoped>
 .area {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
 }
 
 .circles {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
+  padding: 0;
 }
 
 .circles li {
@@ -55,7 +57,7 @@
   list-style: none;
   width: 20px;
   height: 20px;
-  background: rgba(179, 0, 179, 0.5);
+  background: rgb(98, 106, 239, 0.5);
   animation: animate 25s linear infinite;
   bottom: -150px;
 }

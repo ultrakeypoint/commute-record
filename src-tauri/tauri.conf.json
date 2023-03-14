@@ -8,7 +8,7 @@
   },
   "package": {
     "productName": "commute-record",
-    "version": "0.0.1"
+    "version": "0.0.2"
   },
   "tauri": {
     "allowlist": {
@@ -16,6 +16,27 @@
       "shell": {
         "all": false,
         "open": true
+      },
+      "fs": {
+        "all": true,
+        "readFile": true,
+        "writeFile": true,
+        "readDir": true,
+        "copyFile": true,
+        "createDir": true,
+        "removeDir": true,
+        "removeFile": true,
+        "renameFile": true,
+        "exists": true,
+        "scope": ["**"]
+      },
+      "dialog": {
+        "all": true
+      },
+      "app": {
+        "all": true,
+        "show": true,
+        "hide": true
       }
     },
     "bundle": {
@@ -26,14 +47,8 @@
         "depends": []
       },
       "externalBin": [],
-      "icon": [
-        "icons/32x32.png",
-        "icons/128x128.png",
-        "icons/128x128@2x.png",
-        "icons/icon.icns",
-        "icons/icon.ico"
-      ],
-      "identifier": "com.tauri.commute-record",
+      "icon": ["icons/32x32.png", "icons/128x128.png", "icons/icon.ico"],
+      "identifier": "CommuteRecord",
       "longDescription": "",
       "macOS": {
         "entitlements": null,
@@ -60,11 +75,15 @@
     "windows": [
       {
         "fullscreen": false,
-        "height": 600,
+        "width": 1280,
+        "height": 720,
         "resizable": true,
-        "title": "commute-record",
-        "width": 800
+        "title": "출/퇴근 일지"
       }
-    ]
+    ],
+    "systemTray": {
+      "iconPath": "icons/icon.ico",
+      "iconAsTemplate": true
+    }
   }
 }
