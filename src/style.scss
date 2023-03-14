@@ -46,6 +46,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  overflow-x: auto;
 }
 
 table {
@@ -65,28 +66,40 @@ table {
   }
 }
 
-header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  border: 1px solid #ccc;
-  border-radius: 20px;
-  flex: 0 0 40px;
+section {
+  header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #a8abfd;
+    border-radius: 30px;
+    flex: 0 0 40px;
+    padding: 40px;
+    background: #fff;
 
-  .title {
-    margin: 5px 0 -5px;
-    color: #333;
-    font-weight: bold;
-    font-size: 20px;
+    &.el-header {
+      padding: 10px 20px;
+      margin: 10px 10px 0;
+    }
+
+    .title {
+      margin: 5px 0 -5px;
+      color: #333;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .version {
+      font-size: 10px;
+      color: #333;
+    }
+
+    .description {
+      font-size: 12px;
+      color: #333;
+    }
   }
-
-  .description {
-    font-size: 12px;
-    color: #333;
-  }
-
-  background: #efefef;
 }
 
 aside {
@@ -119,13 +132,20 @@ aside {
   display: flex;
   flex: 1;
 
-  .el-main {
+  > .el-main {
     display: flex;
     flex: 1;
 
-    .el-form {
+    > .el-form {
       display: flex;
       flex: 1;
+      flex-direction: column;
+
+      .table-top {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 10px;
+      }
     }
   }
 }
@@ -133,13 +153,13 @@ aside {
 .el-table {
   display: flex;
   flex: 1;
-  height: calc(100vh - 120px);
+  width: calc(100vw - 62px);
+  max-height: calc(100vh - 166px);
   border-top: 1px solid #efefef;
-  border-bottom: 1px solid #efefef;
-  background: transparent;
+  background: rgba(255, 255, 255, 0.85);
 
   tr {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.3);
   }
 
   .el-table__inner-wrapper {
@@ -149,7 +169,7 @@ aside {
     .el-table__header-wrapper {
       th {
         font-weight: bold;
-        color: #777;
+        color: #111;
       }
     }
 
@@ -173,6 +193,24 @@ aside {
           }
         }
       }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .el-table {
+    width: 100%;
+    border: #0974cc;
+  }
+}
+
+.el-dialog {
+  border-radius: 10px;
+
+  &.add {
+    .el-dialog__body {
+      border-top: 1px solid #efefef;
+      border-bottom: 1px solid #efefef;
     }
   }
 }
